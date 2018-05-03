@@ -135,8 +135,13 @@ if initialOutputNumerator == 0 {
         let reducedOutputDenominator = initialOutputDenominator / initialOutputNumerator
         
         // Print the reduced fraction
-        print("\(quotient) \(reducedOutputNumerator)/\(reducedOutputDenominator)")
-        
+        if quotient > 0 {
+            print("\(quotient) \(reducedOutputNumerator)/\(reducedOutputDenominator)")
+        } else {
+            // Don't show the quotiet when it is 0, i.e.: don't print 0 2/3, just print 2/3
+            print("\(reducedOutputNumerator)/\(reducedOutputDenominator)")
+        }
+
     } else {
         
         // We must reduce by finding a GCF (greatest common factor) of the numerator and denominator
@@ -169,7 +174,12 @@ if initialOutputNumerator == 0 {
         let reducedOutputDenominator = providedDenominator / greatestCommonFactor
         
         // Print the reduced fraction
-        print("\(quotient) \(reducedOutputNumerator)/\(reducedOutputDenominator)")
+        if quotient > 0 {
+            print("\(quotient) \(reducedOutputNumerator)/\(reducedOutputDenominator)")
+        } else {
+            // Don't show the quotiet when it is 0, i.e.: don't print 0 2/3, just print 2/3
+            print("\(reducedOutputNumerator)/\(reducedOutputDenominator)")
+        }
         
     }
     
